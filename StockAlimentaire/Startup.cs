@@ -36,7 +36,7 @@ namespace StockAlimentaire
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<StockAlimentaireContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("StockAlimentaireContext")));
+                    options.UseMySql(Configuration.GetConnectionString("StockAlimentaireContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

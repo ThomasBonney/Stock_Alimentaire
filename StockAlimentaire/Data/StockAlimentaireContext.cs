@@ -12,7 +12,5 @@ namespace StockAlimentaire.Models
             : base(options)
         {
         }
-
-        public DbSet<StockAlimentaire.Models.Test> Test { get; set; }
     }
 }

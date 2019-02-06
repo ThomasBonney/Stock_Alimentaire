@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{C3F9696D-7381-43E3-AB73-BD0A3A101149}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StockAlimentaire/Models/Produit.cs">
+    <Files>
+      <File FileName="StockAlimentaire/Startup.cs" Line="39" Column="37" />
+      <File FileName="StockAlimentaire/appsettings.json" Line="9" Column="95" />
+      <File FileName="StockAlimentaire/Data/StockAlimentaireContext.cs" Line="14" Column="10" />
+      <File FileName="StockAlimentaire/Models/Produit.cs" Line="16" Column="1" />
+      <File FileName="StockAlimentaire/Models/Stock.cs" Line="10" Column="45" />
+      <File FileName="StockAlimentaire/Models/StockProduit.cs" Line="12" Column="44" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.StockAlimentaire PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
