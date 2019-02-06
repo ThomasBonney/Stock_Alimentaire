@@ -5,3 +5,5 @@
 /.vs/StockAlimentaire/v15
 /StockAlimentaire/Startup.cs
 /StockAlimentaire/appsettings.json
+StockAlimentaire/bin/Debug/netcoreapp2.1/StockAlimentaire.runtimeconfig.dev.json
+StockAlimentaire/appsettings.json

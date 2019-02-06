@@ -1,13 +1,28 @@
 ﻿<Properties StartupConfiguration="{C3F9696D-7381-43E3-AB73-BD0A3A101149}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StockAlimentaire/Models/Produit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StockAlimentaire/Models/Stock.cs">
     <Files>
-      <File FileName="StockAlimentaire/Startup.cs" Line="39" Column="37" />
+      <File FileName="StockAlimentaire/Startup.cs" Line="1" Column="1" />
       <File FileName="StockAlimentaire/appsettings.json" Line="9" Column="95" />
-      <File FileName="StockAlimentaire/Data/StockAlimentaireContext.cs" Line="14" Column="10" />
-      <File FileName="StockAlimentaire/Models/Produit.cs" Line="16" Column="1" />
-      <File FileName="StockAlimentaire/Models/Stock.cs" Line="10" Column="45" />
-      <File FileName="StockAlimentaire/Models/StockProduit.cs" Line="12" Column="44" />
+      <File FileName="StockAlimentaire/Data/StockAlimentaireContext.cs" Line="1" Column="1" />
+      <File FileName="StockAlimentaire/Models/Produit.cs" Line="1" Column="1" />
+      <File FileName="StockAlimentaire/Models/Stock.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="StockAlimentaire" expanded="True">
+            <Node name="StockAlimentaire" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Stock.cs" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.StockAlimentaire PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
