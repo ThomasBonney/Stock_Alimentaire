@@ -1,0 +1,42 @@
+﻿@model StockAlimentaire.Models.Utilisateur
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Utilisateur</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.utilisateur_nom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.utilisateur_nom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.utilisateur_prenom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.utilisateur_prenom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.utilisateur_pseudo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.utilisateur_pseudo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.utilisateur_motDePasse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.utilisateur_motDePasse)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.utilisateur_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

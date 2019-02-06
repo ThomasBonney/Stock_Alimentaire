@@ -1,0 +1,45 @@
+﻿@model StockAlimentaire.Models.Utilisateur
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Utilisateur</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.utilisateur_nom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.utilisateur_nom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.utilisateur_prenom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.utilisateur_prenom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.utilisateur_pseudo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.utilisateur_pseudo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.utilisateur_motDePasse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.utilisateur_motDePasse)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="utilisateur_id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

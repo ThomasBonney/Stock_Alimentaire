@@ -62,3 +62,9 @@ C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj
 C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\StockAlimentaire.RazorTargetAssemblyInfo.cs
 C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\StockAlimentaire.Views.pdb
 C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\StockAlimentaire.csproj.CopyComplete
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Utilisateurs\Create.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Utilisateurs\Delete.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Utilisateurs\Details.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Utilisateurs\Edit.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Utilisateurs\Index.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Utilisateurs\Authentification.g.cshtml.cs
