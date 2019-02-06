@@ -1,0 +1,39 @@
+﻿@model StockAlimentaire.Models.StockProduit
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StockProduit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.produit_id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.produit_id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.stock_id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.stock_id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.stockProduit_qteStock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.stockProduit_qteStock)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="stockProduit_id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -14,5 +14,8 @@ namespace StockAlimentaire.Models
         {
         }
         public DbSet<StockAlimentaire.Models.Utilisateur> Utilisateur { get; set; }
+        public DbSet<StockAlimentaire.Models.StockProduit> StockProduit { get; set; }
+        public DbSet<StockAlimentaire.Models.Stock> Stock { get; set; }
+        public DbSet<StockAlimentaire.Models.Produit> Produit { get; set; }
     }
 }

@@ -68,3 +68,13 @@ C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj
 C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Utilisateurs\Edit.g.cshtml.cs
 C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Utilisateurs\Index.g.cshtml.cs
 C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Utilisateurs\Authentification.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\StockProduits\Create.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\StockProduits\Delete.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\StockProduits\Details.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\StockProduits\Edit.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\StockProduits\Index.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Stocks\Create.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Stocks\Delete.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Stocks\Details.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Stocks\Edit.g.cshtml.cs
+C:\Users\thomas\source\repos\ThomasBonney\Stock_Alimentaire\StockAlimentaire\obj\Debug\netcoreapp2.1\Razor\Views\Stocks\Index.g.cshtml.cs
