@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.utilisateur_id)
+                @Html.DisplayNameFor(model => model.stock_nom)
             </th>
             <th></th>
         </tr>
@@ -22,7 +22,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.utilisateur_id)
+                @Html.DisplayFor(modelItem => item.stock_nom)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.stock_id">Edit</a> |

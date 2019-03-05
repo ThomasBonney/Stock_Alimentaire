@@ -43,7 +43,7 @@ namespace StockAlimentaire.Controllers
         }
 
         // GET: Stocks/Create
-        public IActionResult Create()
+        public IActionResult Create(string pseudoUser)
         {
             return View();
         }
@@ -53,7 +53,7 @@ namespace StockAlimentaire.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("stock_id,utilisateur_id")] Stock stock)
+        public async Task<IActionResult> Create([Bind("stock_id,utilisateur_id,stock_nom")] Stock stock)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace StockAlimentaire.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("stock_id,utilisateur_id")] Stock stock)
+        public async Task<IActionResult> Edit(int id, [Bind("stock_id,utilisateur_id,stock_nom")] Stock stock)
         {
             if (id != stock.stock_id)
             {
