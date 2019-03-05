@@ -149,11 +149,8 @@ namespace StockAlimentaire.Controllers
             return _context.Utilisateur.Any(e => e.utilisateur_id == id);
         }
 
-        // GET: Utilisateurs/Authentification
-        public IActionResult Authentification()
-        {
-            return View();
-        }
+        
+
 
     }
 }

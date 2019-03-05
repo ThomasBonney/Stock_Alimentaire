@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Authentification";
+}
+
+
+
+
+<div class="container">
+    <div class="row text-center">
+
+        <form asp-action="AuthentificationUtilisateur">
+            <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+            @if (ViewBag.Message != null)
+            {
+                <text>
+                    <div class="message_erreur">
+                        @ViewBag.Message
+                    </div>
+                </text>
+            }
+            <label for="inputPseudo" class="sr-only">Email</label>
+            <input type="text" id="inputPseudo" name="inputPseudo" class="form-control" placeholder="Pseudo" required="" autofocus="">
+            <label for="inputPassword" class="sr-only">Mot de passe</label>
+            <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Mot de passe" required="">
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Se Connecter</button>
+        </form>
+    </div>
+</div>

@@ -9,6 +9,10 @@ namespace StockAlimentaire.Models
 {
     public class StockAlimentaireContext : DbContext
     {
+        public StockAlimentaireContext()
+        {
+        }
+
         public StockAlimentaireContext (DbContextOptions<StockAlimentaireContext> options)
             : base(options)
         {

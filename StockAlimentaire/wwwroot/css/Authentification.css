@@ -1,0 +1,12 @@
+﻿body {
+}
+
+
+.message_erreur {
+    color: rgb(92, 0, 0);
+    width: 100%;
+    background-color: tomato;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
