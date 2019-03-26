@@ -59,7 +59,8 @@ namespace StockAlimentaire.Controllers
             {
                 _context.Add(utilisateur);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
             return View(utilisateur);
         }
