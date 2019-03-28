@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,6 +13,7 @@ namespace StockAlimentaire.Models
         public int  utilisateur_id  { get; set; }
         public string stock_nom { get; set; }
 
+        public List<Produit> produits = new List<Produit>();
     }
 
     /*public string GetNameUser(int id)

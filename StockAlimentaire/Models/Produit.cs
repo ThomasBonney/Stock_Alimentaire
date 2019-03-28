@@ -17,5 +17,6 @@ namespace StockAlimentaire.Models
         public int stock_id { get; set; }
         public string nomProd { get; set; }
         public int quantite { get; set; }
+        public bool course { get; set; }
     }
 }

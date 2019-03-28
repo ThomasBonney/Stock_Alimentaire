@@ -7,16 +7,46 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Stock</h4>
+    <h4>Stock - @Html.DisplayFor(model => model.stock_nom)</h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Nom du Produit
+                </th>
+                <th>
+                    Quantité
+                </th>
+                <th>
+                    Course
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.produits)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomProd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quantite)
+                </td>
+                <td>
+                    <input type="checkbox" id="course" name="course" @item.course ? checked : "">
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.idProd">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.idProd">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.idProd">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.stock_nom)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.stock_nom)
-        </dd>
-    </dl>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.stock_id">Edit</a> |
