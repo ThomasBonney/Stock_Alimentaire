@@ -3,17 +3,23 @@
     ViewData["Title"] = "Home Page";
 }
 <div class="row DashBoardContent">
-    <div class="col-sm-4 tuile tuilered" asp-controller="Produit" asp-action="Index">
+    <div class="col-sm-4 tuile tuilered">
         <div class="Title">Produit en Rupture</div>
-        <div class="Content"> @Model.nbProdRupt Produits</div>
+        <div class="Content" >
+            <a style="color: white;" asp-controller="Produits" asp-action="Index" asp-route-userId="@Model.userId" asp-route-rupture="true"> @Model.nbProdRupt Produits</a>
+        </div>
     </div>
     <div class="col-sm-4 tuile tuilegreen">
         <div class="Title">Nombre de Stock</div>
-        <div class="Content">@Model.nbStock Stock(s)</div>
+        <div class="Content" >
+            <a style="color: white;" asp-controller="Stocks" asp-action="Index">@Model.nbStock Stock(s)</a>
+        </div>
     </div>
     <div class="col-sm-4 tuile tuileblue">
         <div class="Title">Liste de Course</div>
-        <div class="Content"> GO </div>
+        <div class="Content">
+            <a style="color: white;"> GO </a>
+        </div>
     </div>
 </div>
 

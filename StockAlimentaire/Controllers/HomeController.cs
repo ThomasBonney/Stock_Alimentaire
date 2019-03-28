@@ -21,31 +21,32 @@ namespace StockAlimentaire.Controllers
 
         public IActionResult Index()
         {
-            DashboardModel dashboard = new DashboardModel
-            {
-                nbStock = NbStock()
-            };
+            DashboardModel dashboard = new DashboardModel();
+            dashboard.userId = (int)HttpContext.Session.GetInt32("UtilisateurId");
+            dashboard.nbStock = NbStock(dashboard.userId);
+            dashboard.nbProdRupt = NbProdRupt(dashboard.userId);
+
             return View(dashboard);
         }
 
-        public int NbStock()
+        public int NbStock(int Id)
         {
             int nbStock = 0;
-            var lStock = _context.Stock.Where(x=>x.utilisateur_id == (int)HttpContext.Session.GetInt32("UtilisateurId")).ToListAsync();
+            var lStock = _context.Stock.Where(x=>x.utilisateur_id == Id).ToList();
             if (lStock != null)
             {
-                nbStock = _context.Stock.Count();
+                nbStock = lStock.Count();
             }
             return nbStock;
         }
 
-        public int NbProdRupt()
+        public int NbProdRupt(int Id)
         {
             int nbProdRupt = 0;
-            var lProduit = _context.Produit.Where(x => x.utilisateur_id == (int)HttpContext.Session.GetInt32("UtilisateurId") && x.quantite == 0).ToListAsync();
+            var lProduit = _context.Produit.Where(x => x.utilisateur_id == Id && x.quantite == 0).ToList();
             if (lProduit != null)
             {
-                nbProdRupt = _context.Produit.Count();
+                nbProdRupt = lProduit.Count();
             }
             return nbProdRupt;
         }
