@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -35,8 +31,11 @@ namespace StockAlimentaire
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
+            services.AddSession();
+
             services.AddDbContext<StockAlimentaireContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("StockAlimentaireContext")));
+                    options.UseMySql(Configuration.GetConnectionString("StockAlimentaireContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,11 +53,14 @@ namespace StockAlimentaire
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            // IMPORTANT: This session call MUST go before UseMvc()
+            app.UseSession();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Utilisateurs}/{action=Authentification}");
+                    template: "{controller=Authentification}/{action=Authentification}");
             });
         }
     }
