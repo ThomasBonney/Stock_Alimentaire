@@ -1,18 +1,19 @@
-﻿@{
+﻿@model DashboardModel
+@{
     ViewData["Title"] = "Home Page";
 }
-<div class="row">
-    <div class="col-md-4 tuilered">
+<div class="row DashBoardContent">
+    <div class="col-sm-4 tuile tuilered" asp-controller="Produit" asp-action="Index">
         <div class="Title">Produit en Rupture</div>
-        <div class="Content"> 3 Produits</div>
+        <div class="Content"> @Model.nbProdRupt Produits</div>
     </div>
-    <div class="col-md-4 tuile">
-        <div class="Title">Nombre de Produits dans le Stock</div>
-        <div class="Content"></div>
+    <div class="col-sm-4 tuile tuilegreen">
+        <div class="Title">Nombre de Stock</div>
+        <div class="Content">@Model.nbStock Stock(s)</div>
     </div>
-    <div class="col-md-4 tuile">
-        <div class="Title"></div>
-        <div class="Content"></div>
+    <div class="col-sm-4 tuile tuileblue">
+        <div class="Title">Liste de Course</div>
+        <div class="Content"> GO </div>
     </div>
 </div>
 
