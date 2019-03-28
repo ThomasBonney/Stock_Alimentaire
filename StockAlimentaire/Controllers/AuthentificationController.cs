@@ -36,8 +36,8 @@ namespace StockAlimentaire.Controllers
             Utilisateur user1 = query.FirstOrDefault<Utilisateur>();
             if (user1 != null && user1.utilisateur_motDePasse == inputPassword)
             {
-                //HttpContext.Session.SetString("UtilisateurNom", user1.utilisateur_nom);
                 //HttpContext.Session.GetString("UtilisateurNom");
+                HttpContext.Session.SetInt32("UtilisateurId", user1.utilisateur_id);
                 return RedirectToAction("Index", "Home");
             }
             else

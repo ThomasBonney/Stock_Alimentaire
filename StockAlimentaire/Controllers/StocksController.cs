@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using StockAlimentaire.Models;
+using Microsoft.AspNetCore.Session;
+using Microsoft.AspNetCore.Http;
 
 namespace StockAlimentaire.Controllers
 {
@@ -43,7 +45,7 @@ namespace StockAlimentaire.Controllers
         }
 
         // GET: Stocks/Create
-        public IActionResult Create(string pseudoUser)
+        public IActionResult Create()
         {
             return View();
         }
@@ -55,6 +57,8 @@ namespace StockAlimentaire.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("stock_id,utilisateur_id,stock_nom")] Stock stock)
         {
+            stock.utilisateur_id = (int)HttpContext.Session.GetInt32("UtilisateurId");
+
             if (ModelState.IsValid)
             {
                 _context.Add(stock);
