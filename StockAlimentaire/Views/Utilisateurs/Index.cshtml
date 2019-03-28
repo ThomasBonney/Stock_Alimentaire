@@ -9,22 +9,24 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" id="liste">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.utilisateur_nom)
+                Nom
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.utilisateur_prenom)
+                Prénom
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.utilisateur_pseudo)
+                Pseudo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.utilisateur_motDePasse)
+                Mot de passe
             </th>
-            <th></th>
+            <th>
+                Action
+            </th>
         </tr>
     </thead>
     <tbody>

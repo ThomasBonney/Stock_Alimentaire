@@ -49,3 +49,26 @@ body {
 .Title{
     font-size: large;
 }
+
+
+#liste th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #13578d;
+    color: white;
+}
+
+
+#liste td, #liste th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#liste tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#liste tr:hover {
+    background-color: #ddd;
+}
