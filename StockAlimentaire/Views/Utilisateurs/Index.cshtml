@@ -4,6 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
+<partial name="_NavBar" />
+
 <h2>Index</h2>
 
 <p>
@@ -25,31 +27,32 @@
                 Mot de passe
             </th>
             <th>
-                Action
+
             </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.utilisateur_nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.utilisateur_prenom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.utilisateur_pseudo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.utilisateur_motDePasse)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.utilisateur_id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.utilisateur_id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.utilisateur_id">Delete</a>
-            </td>
-        </tr>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.utilisateur_nom)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.utilisateur_prenom)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.utilisateur_pseudo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.utilisateur_motDePasse)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.utilisateur_id"><i class="glyphicon glyphicon-edit"></i></a>
+        <a asp-action="Details" asp-route-id="@item.utilisateur_id"><i class="glyphicon glyphicon-search"></i></a>
+        <a asp-action="Delete" asp-route-id="@item.utilisateur_id"><i class="glyphicon glyphicon-trash"></i></a>
+    </td>
+</tr>
 }
     </tbody>
 </table>

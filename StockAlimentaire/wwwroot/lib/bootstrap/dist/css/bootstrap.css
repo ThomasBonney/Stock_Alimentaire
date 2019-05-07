@@ -6758,3 +6758,14 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+.glyphicon-trash:before {
+    color: red;
+}
+.glyphicon-off:before {
+    color: rgb(166, 0, 0);
+}
+
+#deconnexion {
+    float: right;
+}

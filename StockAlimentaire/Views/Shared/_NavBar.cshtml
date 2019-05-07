@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">StockAlimentaire</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="Produits" asp-action="Index">Produits</a></li>
+                <li><a asp-area="" asp-controller="Stocks" asp-action="Index">Stocks</a></li>
+            </ul>
+            <div id="deconnexion">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Utilisateur" asp-action="Edit">@ViewBag.pseudo</a></li>
+                    <li><a asp-action="DeconnexionUtilisateur"><i class="glyphicon glyphicon-off"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav>
