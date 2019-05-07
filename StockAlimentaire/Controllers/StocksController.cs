@@ -33,9 +33,10 @@ namespace StockAlimentaire.Controllers
             {
                 return NotFound();
             }
-
-            var stock = await _context.Stock
-                .FirstOrDefaultAsync(m => m.stock_id == id);
+            Stock stock = await _context.Stock.FirstOrDefaultAsync(m => m.stock_id == id);
+            stock.produits = new List<Produit>();
+            if(_context.Produit.Where(x => x.stock_id == id).ToListAsync()!= null)
+                stock.produits = await _context.Produit.Where(x => x.stock_id == id).ToListAsync();
             if (stock == null)
             {
                 return NotFound();

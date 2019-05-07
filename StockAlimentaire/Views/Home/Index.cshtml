@@ -1,19 +1,25 @@
-﻿@{
+﻿@model DashboardModel
+@{
     ViewData["Title"] = "Home Page";
 }
-<partial name="_NavBar" />
-
-<div class="row">
-    <div class="col-md-4 tuilered">
+<div class="row DashBoardContent">
+    <div class="col-sm-4 tuile tuilered">
         <div class="Title">Produit en Rupture</div>
-        <div class="Content"> 3 Produits</div>
+        <div class="Content" >
+            <a style="color: white;" asp-controller="Produits" asp-action="Index" asp-route-userId="@Model.userId" asp-route-rupture="true"> @Model.nbProdRupt Produits</a>
+        </div>
     </div>
-    <div class="col-md-4 tuile">
-        <div class="Title">Nombre de Produits dans le Stock</div>
-        <div class="Content"></div>
+    <div class="col-sm-4 tuile tuilegreen">
+        <div class="Title">Nombre de Stock</div>
+        <div class="Content" >
+            <a style="color: white;" asp-controller="Stocks" asp-action="Index">@Model.nbStock Stock(s)</a>
+        </div>
     </div>
-    <div class="col-md-4 tuile">
-        <div class="Title"></div>
-        <div class="Content"></div>
+    <div class="col-sm-4 tuile tuileblue">
+        <div class="Title">Liste de Course</div>
+        <div class="Content">
+            <a style="color: white;" asp-controller="Produits" asp-action="Index" asp-route-userId="@Model.userId" asp-route-course="true"> GO </a>
+        </div>
     </div>
 </div>
+

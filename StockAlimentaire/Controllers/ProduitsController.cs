@@ -19,9 +19,15 @@ namespace StockAlimentaire.Controllers
         }
 
         // GET: Produits
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int idUser, bool rupt, bool course)
         {
-            return View(await _context.Produit.ToListAsync());
+            List<Produit> produits = new List<Produit>();
+            produits = await _context.Produit.Where(x => x.utilisateur_id == idUser).ToListAsync();
+            if (rupt)
+                produits = produits.Where(x => x.quantite == 0).ToList();
+            if (course)
+                produits = produits.Where(x => x.course == true).ToList();
+            return View(produits);
         }
 
         // GET: Produits/Details/5
