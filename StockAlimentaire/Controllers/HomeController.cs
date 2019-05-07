@@ -21,6 +21,7 @@ namespace StockAlimentaire.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.pseudo = (string)HttpContext.Session.GetString("Pseudo");
             DashboardModel dashboard = new DashboardModel();
             dashboard.userId = (int)HttpContext.Session.GetInt32("UtilisateurId");
             dashboard.nbStock = NbStock(dashboard.userId);
@@ -43,7 +44,7 @@ namespace StockAlimentaire.Controllers
         public int NbProdRupt(int Id)
         {
             int nbProdRupt = 0;
-            var lProduit = _context.Produit.Where(x => x.utilisateur_id == Id && x.quantite == 0).ToList();
+            var lProduit = _context.StockProduit.Where(x => x.utilisateur_id == Id && x.stockProduit_qteStock == 0).ToList();
             if (lProduit != null)
             {
                 nbProdRupt = lProduit.Count();

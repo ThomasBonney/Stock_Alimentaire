@@ -4,12 +4,12 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details Stock</h2>
 
 <div>
-    <h4>Stock - @Html.DisplayFor(model => model.stock_nom)</h4>
+    <h4>@Html.DisplayFor(model => model.stock_nom)</h4>
 
-    <table class="table">
+    <table class="table" id="liste">
         <thead>
             <tr>
                 <th>
@@ -29,18 +29,18 @@
             {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.nomProd)
+                    @Html.DisplayFor(modelItem => item.produit_id)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.quantite)
+                    @Html.DisplayFor(modelItem => item.stockProduit_qteStock)
                 </td>
                 <td>
-                    <input type="checkbox" id="course" name="course" @item.course ? checked : "">
+                    <input type="checkbox" id="course" name="course" @item.stockProduit_course ? checked : "">
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.idProd">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.idProd">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.idProd">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.produit_id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.produit_id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.produit_id">Delete</a>
                 </td>
             </tr>
             }

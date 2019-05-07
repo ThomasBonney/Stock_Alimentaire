@@ -12,7 +12,11 @@ namespace StockAlimentaire.Models
         public int produit_id { get; set; }
         [ForeignKey("Stock")]
         public int stock_id { get; set; }
+        [ForeignKey("Utilisateur")]
+        public int utilisateur_id { get; set; }
+
         public int stockProduit_qteStock { get; set; }
+        public bool stockProduit_course { get; set; }
 
     }
 }

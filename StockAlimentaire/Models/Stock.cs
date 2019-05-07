@@ -13,7 +13,7 @@ namespace StockAlimentaire.Models
         public int  utilisateur_id  { get; set; }
         public string stock_nom { get; set; }
 
-        public List<Produit> produits = new List<Produit>();
+        public List<StockProduit> produits = new List<StockProduit>();
     }
 
     /*public string GetNameUser(int id)

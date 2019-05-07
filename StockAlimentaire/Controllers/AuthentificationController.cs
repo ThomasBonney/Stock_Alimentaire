@@ -38,6 +38,7 @@ namespace StockAlimentaire.Controllers
             {
                 //HttpContext.Session.GetString("UtilisateurNom");
                 HttpContext.Session.SetInt32("UtilisateurId", user1.utilisateur_id);
+                HttpContext.Session.SetString("Pseudo", user1.utilisateur_pseudo);
                 return RedirectToAction("Index", "Home");
             }
             else

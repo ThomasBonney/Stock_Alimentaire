@@ -34,9 +34,9 @@ namespace StockAlimentaire.Controllers
                 return NotFound();
             }
             Stock stock = await _context.Stock.FirstOrDefaultAsync(m => m.stock_id == id);
-            stock.produits = new List<Produit>();
-            if(_context.Produit.Where(x => x.stock_id == id).ToListAsync()!= null)
-                stock.produits = await _context.Produit.Where(x => x.stock_id == id).ToListAsync();
+            stock.produits = new List<StockProduit>();
+            if(_context.StockProduit.Where(x => x.stock_id == id).ToListAsync()!= null)
+                stock.produits = await _context.StockProduit.Where(x => x.stock_id == id).ToListAsync();
             if (stock == null)
             {
                 return NotFound();
@@ -144,6 +144,11 @@ namespace StockAlimentaire.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var stock = await _context.Stock.FindAsync(id);
+
+            if (stock == null)
+            {
+                return NotFound();
+            }
             _context.Stock.Remove(stock);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

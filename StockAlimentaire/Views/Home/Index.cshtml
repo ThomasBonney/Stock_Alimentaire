@@ -6,7 +6,7 @@
     <div class="col-sm-4 tuile tuilered">
         <div class="Title">Produit en Rupture</div>
         <div class="Content" >
-            <a style="color: white;" asp-controller="Produits" asp-action="Index" asp-route-userId="@Model.userId" asp-route-rupture="true"> @Model.nbProdRupt Produits</a>
+            <a style="color: white;" asp-controller="StockProduits" asp-action="Index" asp-route-userId="@Model.userId" asp-route-rupture="true"> @Model.nbProdRupt Produits</a>
         </div>
     </div>
     <div class="col-sm-4 tuile tuilegreen">
@@ -18,7 +18,7 @@
     <div class="col-sm-4 tuile tuileblue">
         <div class="Title">Liste de Course</div>
         <div class="Content">
-            <a style="color: white;" asp-controller="Produits" asp-action="Index" asp-route-userId="@Model.userId" asp-route-course="true"> GO </a>
+            <a style="color: white;" asp-controller="StockProduits" asp-action="Index" asp-route-userId="@Model.userId" asp-route-course="true"> GO </a>
         </div>
     </div>
 </div>
