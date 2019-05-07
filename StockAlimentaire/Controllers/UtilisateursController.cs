@@ -42,6 +42,8 @@ namespace StockAlimentaire.Controllers
             return View(utilisateur);
         }
 
+        
+
         // GET: Utilisateurs/Create
         public IActionResult Create()
         {
@@ -60,7 +62,7 @@ namespace StockAlimentaire.Controllers
                 _context.Add(utilisateur);
                 await _context.SaveChangesAsync();
                 //return RedirectToAction(nameof(Index));
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Authentification", "Authentification");
             }
             return View(utilisateur);
         }
