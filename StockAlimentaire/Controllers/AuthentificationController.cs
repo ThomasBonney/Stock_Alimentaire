@@ -48,6 +48,15 @@ namespace StockAlimentaire.Controllers
             }
         }
 
+        // GET: Authentification/DeconnexionUtilisateur
+        public ActionResult DeconnexionUtilisateur()
+        {
+            HttpContext.Session.SetString("Pseudo", "");
+            return View("Authentification");
+        }
+
+
+
         private string Decrypt(string result1)
         {
             throw new NotImplementedException();

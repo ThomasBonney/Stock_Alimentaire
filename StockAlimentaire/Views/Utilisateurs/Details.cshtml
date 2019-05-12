@@ -4,39 +4,32 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Utilisateur - Details</h2>
 
 <div>
-    <h4>Utilisateur</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.utilisateur_nom)
+        <dt class="edit-label">
+            Nom
         </dt>
         <dd>
             @Html.DisplayFor(model => model.utilisateur_nom)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.utilisateur_prenom)
+        <dt class="edit-label">
+            Prénom
         </dt>
         <dd>
             @Html.DisplayFor(model => model.utilisateur_prenom)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.utilisateur_pseudo)
+        <dt class="edit-label">
+            Pseudo
         </dt>
         <dd>
             @Html.DisplayFor(model => model.utilisateur_pseudo)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.utilisateur_motDePasse)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.utilisateur_motDePasse)
-        </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.utilisateur_id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.utilisateur_id">Modifier</a> |
+    <a asp-action="Index">Retour à la liste des utilisateurs</a>
 </div>

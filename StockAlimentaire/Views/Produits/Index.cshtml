@@ -1,35 +1,36 @@
 ﻿@model IEnumerable<StockAlimentaire.Models.Produit>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Produit";
 }
 
-<h2>Index</h2>
+<h2>Produit</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Créer un produit</a>
 </p>
 <table class="table" id="liste">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nomProd)
+                Nom
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nomProd)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.idProd">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.idProd">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.idProd">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomProd)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.idProd"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.idProd"><i class="glyphicon glyphicon-search"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.idProd"><i class="glyphicon glyphicon-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

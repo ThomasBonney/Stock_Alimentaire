@@ -1,47 +1,57 @@
 ﻿@model StockAlimentaire.Models.Utilisateur
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Modification";
 }
 
-<h2>Edit</h2>
-
-<h4>Utilisateur</h4>
+<h2>Utilisateur - Modification</h2>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<div class="container">
+    <div class="row text-center">
+        <form asp-action="Edit" asp-route-id="@Model.utilisateur_id">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="utilisateur_id" />
+
+            <dl class="dl-horizontal">
+                <dt>
+                    <label asp-for="utilisateur_nom" class="edit-label">Nom</label>
+                </dt>
+                <dd>
+                    <input asp-for="utilisateur_nom" class="form-control" />
+                    <span asp-validation-for="utilisateur_nom" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="utilisateur_prenom" class="edit-label">Prénom</label>
+                </dt>
+                <dd>
+                    <input asp-for="utilisateur_prenom" class="form-control" />
+                    <span asp-validation-for="utilisateur_prenom" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="utilisateur_pseudo" class="edit-label">Pseudo</label>
+                </dt>
+                <dd>
+                    <input asp-for="utilisateur_pseudo" class="form-control" />
+                    <span asp-validation-for="utilisateur_pseudo" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="utilisateur_motDePasse" class="edit-label">Mot de passe</label>
+                </dt>
+                <dd>
+                    <input asp-for="utilisateur_motDePasse" class="form-control" type="password" />
+                    <span asp-validation-for="utilisateur_motDePasse" class="text-danger"></span>
+                </dd>
+            </dl>
+
             <div class="form-group">
-                <label asp-for="utilisateur_nom" class="control-label"></label>
-                <input asp-for="utilisateur_nom" class="form-control" />
-                <span asp-validation-for="utilisateur_nom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="utilisateur_prenom" class="control-label"></label>
-                <input asp-for="utilisateur_prenom" class="form-control" />
-                <span asp-validation-for="utilisateur_prenom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="utilisateur_pseudo" class="control-label"></label>
-                <input asp-for="utilisateur_pseudo" class="form-control" />
-                <span asp-validation-for="utilisateur_pseudo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="utilisateur_motDePasse" class="control-label"></label>
-                <input asp-for="utilisateur_motDePasse" class="form-control" />
-                <span asp-validation-for="utilisateur_motDePasse" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Modifier" class="btn btn-lg btn-primary btn-block" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Retour à la liste des utilisateurs</a>
 </div>
 
 @section Scripts {

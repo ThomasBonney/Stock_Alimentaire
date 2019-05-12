@@ -4,20 +4,22 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<partial name="_NavBar" />
+
+<h2>Produit en stock</h2>
 
 
 <table class="table" id="liste">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.produit_id)
+                ID prdoduit
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.stock_id)
+                ID stock
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.stockProduit_qteStock)
+                Quantité
             </th>
             <th></th>
         </tr>
@@ -35,9 +37,9 @@
                 @Html.DisplayFor(modelItem => item.stockProduit_qteStock)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.stockProduit_id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.stockProduit_id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.stockProduit_id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.stockProduit_id"><i class="glyphicon glyphicon-edit"></i></a>
+                <a asp-action="Details" asp-route-id="@item.stockProduit_id"><i class="glyphicon glyphicon-search"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.stockProduit_id"><i class="glyphicon glyphicon-trash"></i></a>
             </td>
         </tr>
 }

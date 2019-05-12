@@ -139,6 +139,11 @@ namespace StockAlimentaire.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var produit = await _context.Produit.FindAsync(id);
+
+            if (produit == null)
+            {
+                return NotFound();
+            }
             _context.Produit.Remove(produit);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

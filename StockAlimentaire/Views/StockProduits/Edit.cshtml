@@ -4,38 +4,44 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
-
-<h4>StockProduit</h4>
+<h2>Stock produit - Modification</h2>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<div class="container">
+    <div class="row text-center">
+        <form asp-action="Edit" asp-route-id="@Model.stockProduit_id">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="stockProduit_id" />
+            <dl class="dl-horizontal">
+                <dt>
+                    <label asp-for="produit_id" class="edit-label">ID produit</label>
+                </dt>
+                <dd>
+                    <input asp-for="produit_id" class="form-control" />
+                    <span asp-validation-for="produit_id" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="stock_id" class="edit-label">ID stock</label>
+                </dt>
+                <dd>
+                    <input asp-for="stock_id" class="form-control" />
+                    <span asp-validation-for="stock_id" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="stockProduit_qteStock" class="edit-label">Quantité produit</label>
+                </dt>
+                <dd>
+                    <input asp-for="stockProduit_qteStock" class="form-control" />
+                    <span asp-validation-for="stockProduit_qteStock" class="text-danger"></span>
+                </dd>
+            </dl>
             <div class="form-group">
-                <label asp-for="produit_id" class="control-label"></label>
-                <input asp-for="produit_id" class="form-control" />
-                <span asp-validation-for="produit_id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="stock_id" class="control-label"></label>
-                <input asp-for="stock_id" class="form-control" />
-                <span asp-validation-for="stock_id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="stockProduit_qteStock" class="control-label"></label>
-                <input asp-for="stockProduit_qteStock" class="form-control" />
-                <span asp-validation-for="stockProduit_qteStock" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Modifier" class="btn btn-lg btn-primary btn-block" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Retour à la liste</a>
 </div>
 

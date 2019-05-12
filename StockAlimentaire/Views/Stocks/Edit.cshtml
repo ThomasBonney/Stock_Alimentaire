@@ -4,32 +4,39 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
-
-<h4>Stock</h4>
+<h2>Stock - Modification</h2>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<div class="container">
+    <div class="row text-center">
+        <form asp-action="Edit" asp-route-id="@Model.stock_id">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="stock_id" />
-            <div class="form-group">
-                <label asp-for="utilisateur_id" class="control-label"></label>
-                <input asp-for="utilisateur_id" class="form-control" />
-                <span asp-validation-for="utilisateur_id" class="text-danger"></span>
 
-                <label asp-for="stock_nom" class="control-label"></label>
-                <input asp-for="stock_nom" class="form-control" />
-                <span asp-validation-for="stock_nom" class="text-danger"></span>
-            </div>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    <label asp-for="utilisateur_id" class="edit-label">ID utilisateur</label>
+                </dt>
+                <dd>
+                    <input asp-for="utilisateur_id" class="form-control" />
+                    <span asp-validation-for="utilisateur_id" class="text-danger"></span>
+                </dd>
+                <dt>
+                    <label asp-for="stock_nom" class="edit-label">Nom du stock</label>
+                </dt>
+                <dd>
+                    <input asp-for="stock_nom" class="form-control" />
+                    <span asp-validation-for="stock_nom" class="text-danger"></span>
+                </dd>
+            </dl>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Modifier" class="btn btn-lg btn-primary btn-block" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Retour à la liste</a>
 </div>
 

@@ -4,27 +4,27 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Stock produit - Suppression</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Etes-vous sûrs de vouloir supprimer ce stock de produit ?</h3>
 <div>
     <h4>StockProduit</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.produit_id)
+        <dt class="edit-label">
+            ID produit
         </dt>
         <dd>
             @Html.DisplayFor(model => model.produit_id)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.stock_id)
+        <dt class="edit-label">
+            ID stock
         </dt>
         <dd>
             @Html.DisplayFor(model => model.stock_id)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.stockProduit_qteStock)
+        <dt class="edit-label">
+            Quantité produit
         </dt>
         <dd>
             @Html.DisplayFor(model => model.stockProduit_qteStock)
@@ -33,7 +33,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="stockProduit_id" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Supprimer" class="btn btn-danger" asp-route-id="@Model.stockProduit_id" /> |
+        <a asp-action="Index">Retour à la liste</a>
     </form>
 </div>

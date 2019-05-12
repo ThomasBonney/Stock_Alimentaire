@@ -4,26 +4,26 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Stock produit - Details</h2>
 
 <div>
     <h4>StockProduit</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.produit_id)
+        <dt class="edit-label">
+            ID produit
         </dt>
         <dd>
             @Html.DisplayFor(model => model.produit_id)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.stock_id)
+        <dt class="edit-label">
+            ID stock
         </dt>
         <dd>
             @Html.DisplayFor(model => model.stock_id)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.stockProduit_qteStock)
+        <dt class="edit-label">
+            Quantité produit
         </dt>
         <dd>
             @Html.DisplayFor(model => model.stockProduit_qteStock)
@@ -31,6 +31,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.stockProduit_id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.stockProduit_id">Modifier</a> |
+    <a asp-action="Index">Retour à la liste</a>
 </div>

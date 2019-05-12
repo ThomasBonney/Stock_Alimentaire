@@ -115,7 +115,7 @@ namespace StockAlimentaire.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(utilisateur);
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Utilisateurs/Delete/5
@@ -142,6 +142,11 @@ namespace StockAlimentaire.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var utilisateur = await _context.Utilisateur.FindAsync(id);
+
+            if (utilisateur == null)
+            {
+                return NotFound();
+            }
             _context.Utilisateur.Remove(utilisateur);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

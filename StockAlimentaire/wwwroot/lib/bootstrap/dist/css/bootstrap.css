@@ -1454,15 +1454,15 @@ dd {
 @media (min-width: 768px) {
   .dl-horizontal dt {
     float: left;
-    width: 160px;
+    width: 180px;
     overflow: hidden;
     clear: left;
-    text-align: right;
+    text-align: left;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
   .dl-horizontal dd {
-    margin-left: 180px;
+    margin-left: 210px;
   }
 }
 abbr[title],
@@ -1587,6 +1587,7 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -2505,6 +2506,13 @@ legend {
   color: #333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
+}
+.edit-label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #337ab7
 }
 label {
   display: inline-block;
@@ -4404,10 +4412,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-form .input-group > .form-control {
     width: 100%;
   }
-  .navbar-form .control-label {
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
+    .navbar-form .control-label {
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
   .navbar-form .radio,
   .navbar-form .checkbox {
     display: inline-block;

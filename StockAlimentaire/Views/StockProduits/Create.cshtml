@@ -4,37 +4,34 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
-
-<h4>StockProduit</h4>
+<h2>Stock produit - Création</h2>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="container">
+    <div class="row text-center">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="produit_id" class="control-label"></label>
-                <input asp-for="produit_id" class="form-control" />
+                <label asp-for="produit_id" class="sr-only"></label>
+                <input asp-for="produit_id" class="form-control" placeholder="Id produit"/>
                 <span asp-validation-for="produit_id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="stock_id" class="control-label"></label>
-                <input asp-for="stock_id" class="form-control" />
+                <label asp-for="stock_id" class="sr-only"></label>
+                <input asp-for="stock_id" class="form-control" placeholder="Id stock"/>
                 <span asp-validation-for="stock_id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="stockProduit_qteStock" class="control-label"></label>
-                <input asp-for="stockProduit_qteStock" class="form-control" />
+                <label asp-for="stockProduit_qteStock" class="sr-only"></label>
+                <input asp-for="stockProduit_qteStock" class="form-control" placeholder="Quantité produit"/>
                 <span asp-validation-for="stockProduit_qteStock" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Créer" class="btn btn-lg btn-primary btn-block" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Retour à la liste</a>
 </div>
-
