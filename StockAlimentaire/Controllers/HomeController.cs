@@ -76,5 +76,10 @@ namespace StockAlimentaire.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        internal static IActionResult View(Func<int, bool, bool, Task<IActionResult>> index)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

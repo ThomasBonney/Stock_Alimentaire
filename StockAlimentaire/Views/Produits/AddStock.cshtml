@@ -1,0 +1,40 @@
+﻿@model StockAlimentaire.Models.AddProdStockModel
+
+@{
+    ViewData["Title"] = "Ajouter un produit dans un stock";
+}
+
+<h2>Ajouter le produit</h2>
+
+<h4>Produit : @Model.produit.nomProd </h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="StockProduits" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="produit_id" asp-for="stoProd.produit_id" value="@Model.produit.idProd"/>
+            <input type="hidden" name="stockProduit_id" asp-for="stoProd.stockProduit_id" value="0"/>
+            <div class="form-group">
+                <label asp-for="stoProd.stock_id" class="control-label"> Choix du stock </label>
+                <select name="stock_id" asp-for="stoProd.stock_id">
+                    <option value="">--Choisir une option--</option>
+                    @foreach(Stock sto in Model.lStock){  
+                        <option value="@sto.stock_id">@sto.stock_nom</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="stoProd.stockProduit_qteStock" class="control-label"> Quantité </label>
+                <input name="stockProduit_qteStock" asp-for="stoProd.stockProduit_qteStock" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

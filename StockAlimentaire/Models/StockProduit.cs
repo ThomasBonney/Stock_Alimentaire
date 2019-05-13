@@ -18,5 +18,7 @@ namespace StockAlimentaire.Models
         public int stockProduit_qteStock { get; set; }
         public bool stockProduit_course { get; set; }
 
+        public virtual Produit Produit { get; set; }
+
     }
 }

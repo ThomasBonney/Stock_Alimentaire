@@ -36,7 +36,7 @@ namespace StockAlimentaire.Controllers
             Stock stock = await _context.Stock.FirstOrDefaultAsync(m => m.stock_id == id);
             stock.produits = new List<StockProduit>();
             if(_context.StockProduit.Where(x => x.stock_id == id).ToListAsync()!= null)
-                stock.produits = await _context.StockProduit.Where(x => x.stock_id == id).ToListAsync();
+                stock.produits = await _context.StockProduit.Where(x => x.stock_id == id).Include(sp=>sp.Produit).ToListAsync();
             if (stock == null)
             {
                 return NotFound();

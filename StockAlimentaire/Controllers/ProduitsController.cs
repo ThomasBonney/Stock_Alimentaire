@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -152,6 +153,29 @@ namespace StockAlimentaire.Controllers
         private bool ProduitExists(int id)
         {
             return _context.Produit.Any(e => e.idProd == id);
+        }
+
+        // GET: Produits/Edit/5
+        public async Task<IActionResult> AddStock(int? id)
+        {
+            AddProdStockModel addstockprod = new AddProdStockModel();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var produit = await _context.Produit.FindAsync(id);
+            int Id = (int)HttpContext.Session.GetInt32("UtilisateurId");
+            addstockprod.lStock = _context.Stock.Where(x => x.utilisateur_id == Id).ToList();
+
+            if (produit == null)
+            {
+                return NotFound();
+            }
+
+            addstockprod.produit = produit;
+
+            return View(addstockprod);
         }
     }
 }

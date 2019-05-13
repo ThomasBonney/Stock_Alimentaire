@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -63,11 +64,13 @@ namespace StockAlimentaire.Controllers
         {
             if (ModelState.IsValid)
             {
+                stockProduit.utilisateur_id = (int)HttpContext.Session.GetInt32("UtilisateurId");
+                stockProduit.stockProduit_course = false;
                 _context.Add(stockProduit);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index),"Home");
             }
-            return View(stockProduit);
+            return RedirectToAction(nameof(Index), "Home");
         }
 
         // GET: StockProduits/Edit/5
@@ -93,31 +96,32 @@ namespace StockAlimentaire.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("stockProduit_id,produit_id,stock_id,stockProduit_qteStock")] StockProduit stockProduit)
         {
-            if (id != stockProduit.stockProduit_id)
-            {
-                return NotFound();
-            }
+          if (id != stockProduit.stockProduit_id)
+          {
+              return NotFound();
+          }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(stockProduit);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!StockProduitExists(stockProduit.stockProduit_id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
+          if (ModelState.IsValid)
+          {
+              try
+              {
+                  _context.Update(stockProduit);
+                  await _context.SaveChangesAsync();
+              }
+              catch (DbUpdateConcurrencyException)
+              {
+                  if (!StockProduitExists(stockProduit.stockProduit_id))
+                  {
+                      return NotFound();
+                  }
+                  else
+                  {
+                      throw;
+                  }
+              }
+              return RedirectToAction(nameof(Index));
+          }
+            
             return View(stockProduit);
         }
 
