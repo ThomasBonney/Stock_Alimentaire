@@ -4,6 +4,8 @@
     ViewData["Title"] = "Modification";
 }
 
+<partial name="_NavBar" />
+
 <h2>Utilisateur - Modification</h2>
 <hr />
 <div class="container">
@@ -50,9 +52,9 @@
     </div>
 </div>
 
-<div>
+<!--<div>
     <a asp-action="Index">Retour à la liste des utilisateurs</a>
-</div>
+</div>-->
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

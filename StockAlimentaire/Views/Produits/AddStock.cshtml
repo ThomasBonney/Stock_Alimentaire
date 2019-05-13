@@ -4,6 +4,8 @@
     ViewData["Title"] = "Ajouter un produit dans un stock";
 }
 
+<partial name="_NavBar" />
+
 <h2>Ajouter le produit</h2>
 
 <h4>Produit : @Model.produit.nomProd </h4>
@@ -21,7 +23,7 @@
                 </dt>
                 <dd>
                     <select name="stock_id" asp-for="stoProd.stock_id" class="form-control">
-                        <option value="">--Choisir une option--</option>
+                        <option value="">--Choisir un stock--</option>
                         @foreach (Stock sto in Model.lStock)
                         {
                             <option value="@sto.stock_id">@sto.stock_nom</option>

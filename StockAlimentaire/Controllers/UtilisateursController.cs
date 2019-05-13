@@ -113,7 +113,7 @@ namespace StockAlimentaire.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("Index", "Home");
         }
