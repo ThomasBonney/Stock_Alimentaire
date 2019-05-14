@@ -16,12 +16,8 @@
 
 
             <dl class="dl-horizontal">
-                <dt>
-                    <label asp-for="utilisateur_id" class="edit-label">ID utilisateur</label>
-                </dt>
                 <dd>
-                    <input asp-for="utilisateur_id" class="form-control" />
-                    <span asp-validation-for="utilisateur_id" class="text-danger"></span>
+                    <input type="hidden" asp-for="utilisateur_id" class="form-control" />
                 </dd>
                 <dt>
                     <label asp-for="stock_nom" class="edit-label">Nom du stock</label>

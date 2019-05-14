@@ -13,29 +13,65 @@
     <thead>
         <tr>
             <th>
-                Nom produit
+                Nom Produit
             </th>
             <th>
-                Quantité
+                Quantité En Stock
+            </th>
+            <th>
+                Course
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Produit.nomProd)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.stockProduit_qteStock)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.stockProduit_id"><i class="glyphicon glyphicon-edit"></i></a>
-                <a asp-action="Details" asp-route-id="@item.stockProduit_id"><i class="glyphicon glyphicon-search"></i></a>
-                <a asp-action="Delete" asp-route-id="@item.stockProduit_id"><i class="glyphicon glyphicon-trash"></i></a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr id="@item.stockProduit_id">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produit.nomProd)
+                </td>
+                <td>
+                    <input type="number" id="qte" name="qte" value="@Html.DisplayFor(modelItem => item.stockProduit_qteStock)" />
+                </td>
+                <td>
+
+                    @if (item.stockProduit_course == true)
+                    {
+                        <input type="checkbox" id="course" name="course" checked>
+                    }
+                    else
+                    {
+                        <input type="checkbox" id="course" name="course">
+                    }
+                </td>
+                <td>
+                    <btn class="btnSave" data-idstpd="@item.stockProduit_id"><i class="glyphicon glyphicon-floppy-saved"></i></btn>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+//function will be called on button click having id btnsave
+    $(".btnSave").click(function () {
+        var id = $(this).attr("data-idstpd");
+        var qte = $('#liste #'+id+' #qte').val();
+        var course = $('#liste #'+id+' #course').is(':checked');
+        $.ajax(
+        {
+            type: "POST", //HTTP POST Method
+            url: "EditProd", // Controller/View
+            data: { //Passing data
+                IdStockProd : id,
+                Qte: qte,
+                Course: course
+            }
+        });
+    });
+});
+</script>

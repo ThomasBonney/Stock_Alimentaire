@@ -23,7 +23,8 @@ namespace StockAlimentaire.Controllers
         // GET: Stocks
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Stock.ToListAsync());
+            int idUser = (int)HttpContext.Session.GetInt32("UtilisateurId");
+            return View(await _context.Stock.Where(x=>x.utilisateur_id == idUser).ToListAsync());
         }
 
         // GET: Stocks/Details/5
@@ -157,6 +158,24 @@ namespace StockAlimentaire.Controllers
         private bool StockExists(int id)
         {
             return _context.Stock.Any(e => e.stock_id == id);
+        }
+
+        public void EditProd(int IdStockProd, int Qte, bool Course)
+        {
+            StockProduit unStockProd = _context.StockProduit.Where(x => x.stockProduit_id == IdStockProd).FirstOrDefault();
+            unStockProd.stockProduit_course = Course;
+            unStockProd.stockProduit_qteStock = Qte;
+            _context.Update(unStockProd);
+            _context.SaveChanges();
+
+        }
+
+        public async Task<IActionResult> DeleteStockProd(int id)
+        {
+            var stockProduit = await _context.StockProduit.FindAsync(id);
+            _context.StockProduit.Remove(stockProduit);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Http
-
+@inject IHttpContextAccessor HttpContextAccessor
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -20,7 +20,7 @@
             </ul>
             <div id="deconnexion">
                 <ul class="nav navbar-nav">
-                    <li><a asp-controller="Utilisateurs" asp-action="Edit" asp-route-id="1">@ViewBag.pseudo</a></li>
+                    <li><a asp-controller="Utilisateurs" asp-action="Edit" asp-route-id="@HttpContextAccessor.HttpContext.Session.GetInt32("UtilisateurId")">@HttpContextAccessor.HttpContext.Session.GetString("Pseudo")</a></li>
                     <li><a asp-controller="Authentification" asp-action="DeconnexionUtilisateur"><i class="glyphicon glyphicon-off"></i></a></li>
                 </ul>
             </div>

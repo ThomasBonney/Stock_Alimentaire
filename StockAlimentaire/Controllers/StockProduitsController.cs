@@ -23,7 +23,7 @@ namespace StockAlimentaire.Controllers
         public async Task<IActionResult> Index(int idUser, bool rupt, bool course)
         {
             List<StockProduit> produits = new List<StockProduit>();
-            produits = await _context.StockProduit.Where(x => x.utilisateur_id == idUser).ToListAsync();
+            produits = await _context.StockProduit.Where(x => x.utilisateur_id == idUser).Include(sp => sp.Produit).ToListAsync();
             if (rupt)
                 produits = produits.Where(x => x.stockProduit_qteStock == 0).ToList();
             if (course)
@@ -157,6 +157,17 @@ namespace StockAlimentaire.Controllers
         private bool StockProduitExists(int id)
         {
             return _context.StockProduit.Any(e => e.stockProduit_id == id);
+        }
+
+
+        public void EditProd(int IdStockProd, int Qte, bool Course)
+        {
+            StockProduit unStockProd = _context.StockProduit.Where(x => x.stockProduit_id == IdStockProd).FirstOrDefault();
+            unStockProd.stockProduit_course = Course;
+            unStockProd.stockProduit_qteStock = Qte;
+            _context.Update(unStockProd);
+            _context.SaveChanges();
+
         }
     }
 }
