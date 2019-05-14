@@ -1,5 +1,4 @@
 ﻿@model StockAlimentaire.Models.Stock
-
 @{
     ViewData["Title"] = "Details";
 }
@@ -34,14 +33,22 @@
                         @Html.DisplayFor(modelItem => item.Produit.nomProd)
                     </td>
                     <td>
-                        <input type="number" id="qte" name="qte" value="@Html.DisplayFor(modelItem => item.stockProduit_qteStock)"/> 
+                        <input type="number" id="qte" name="qte" value="@Html.DisplayFor(modelItem => item.stockProduit_qteStock)" />
                     </td>
                     <td>
-                        <input type="checkbox" id="course" name="course" @item.stockProduit_course ? checked : "">
+                        
+                        @if (item.stockProduit_course == true)
+                        {
+                            <input type="checkbox" id="course" name="course" checked>
+                        }
+                        else
+                        {
+                            <input type="checkbox" id="course" name="course">
+                        }
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.produit_id"><i class="glyphicon glyphicon-edit"></i></a>
-                        <a asp-action="Details" asp-route-id="@item.produit_id"><i class="glyphicon glyphicon-search"></i></a>
+                        <!--<a asp-action="Edit" asp-route-id="@item.produit_id"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.produit_id"><i class="glyphicon glyphicon-search"></i></a>-->
                         <a asp-action="Delete" asp-route-id="@item.produit_id"><i class="glyphicon glyphicon-trash"></i></a>
                     </td>
                 </tr>
