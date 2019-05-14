@@ -34,7 +34,7 @@
                         @Html.DisplayFor(modelItem => item.Produit.nomProd)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.stockProduit_qteStock)
+                        <input type="number" id="qte" name="qte" value="@Html.DisplayFor(modelItem => item.stockProduit_qteStock)"/> 
                     </td>
                     <td>
                         <input type="checkbox" id="course" name="course" @item.stockProduit_course ? checked : "">
